@@ -20,12 +20,12 @@
 ##
 golem::fill_desc(
   pkg_name = "bowAndArrow", # The Name of the package containing the App
-  pkg_title = "PKG_TITLE", # The Title of the package containing the App
-  pkg_description = "PKG_DESC.", # The Description of the package containing the App
-  author_first_name = "AUTHOR_FIRST", # Your First Name
-  author_last_name = "AUTHOR_LAST", # Your Last Name
-  author_email = "AUTHOR@MAIL.COM", # Your Email
-  repo_url = NULL, # The URL of the GitHub Repo (optional),
+  pkg_title = "Bow and Arrow", # The Title of the package containing the App
+  pkg_description = "A package to do calculations regarding archery", # The Description of the package containing the App
+  author_first_name = "Torben", # Your First Name
+  author_last_name = "Wittwer", # Your Last Name
+  author_email = "torden81@protonmail.com", # Your Email
+  repo_url = "https://github.com/torden81/bowAndArrow", # The URL of the GitHub Repo (optional),
   pkg_version = "0.0.0.9000" # The Version of the package containing the App
 )
 
@@ -37,13 +37,14 @@ golem::install_dev_deps()
 
 ## Create Common Files ----
 ## See ?usethis for more information
-usethis::use_mit_license("Golem User") # You can set another license here
-usethis::use_readme_rmd(open = FALSE)
+#usethis::use_mit_license("Golem User") # You can set another license here
+usethis::use_gpl3_license()
+usethis::use_readme_md(open = FALSE)
 devtools::build_readme()
 # Note that `contact` is required since usethis version 2.1.5
 # If your {usethis} version is older, you can remove that param
-usethis::use_code_of_conduct(contact = "Golem User")
-usethis::use_lifecycle_badge("Experimental")
+# usethis::use_code_of_conduct(contact = "Golem User")
+# usethis::use_lifecycle_badge("Experimental")
 usethis::use_news_md(open = FALSE)
 
 ## Use git ----
@@ -51,11 +52,11 @@ usethis::use_git()
 
 ## Init Testing Infrastructure ----
 ## Create a template for tests
-golem::use_recommended_tests()
+#golem::use_recommended_tests()
 
 ## Favicon ----
 # If you want to change the favicon (default is golem's one)
-golem::use_favicon() # path = "path/to/ico". Can be an online file.
+#golem::use_favicon() # path = "path/to/ico". Can be an online file.
 # golem::remove_favicon() # Uncomment to remove the default favicon
 
 ## Add helper functions ----

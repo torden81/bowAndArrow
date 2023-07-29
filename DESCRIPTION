@@ -1,15 +1,21 @@
 Package: bowAndArrow
 Title: Bow and Arrow
 Version: 0.0.0.9000
-Authors@R: person('Torben', 'Wittwer', email = '', role = c('cre', 'aut'))
+Authors@R: person('Torben', 'Wittwer', email = 'torden81@protonmail.com', role = c('cre', 'aut'))
 Description: A package to do calculations regarding archery
 License: GPL (>= 3)
+URL: https://github.com/torden81/bowAndArrow
+BugReports: https://github.com/torden81/bowAndArrow/issues
 Imports: 
     config (>= 0.3.1),
     golem (>= 0.4.1),
     shiny (>= 1.7.4.1)
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.1
-URL: https://github.com/torden81/bowAndArrow
-BugReports: https://github.com/torden81/bowAndArrow/issues
+RoxygenNote: 7.2.3
+VignetteBuilder: knitr

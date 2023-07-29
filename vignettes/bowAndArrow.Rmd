@@ -17,3 +17,20 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(bowAndArrow)
 ```
+
+
+```{r potental_energy}
+E_pot <- energy_bow(draw_weight_pounds = 30, draw_length_inches = 28)
+```
+
+```{r velocity}
+velocity <- init_v(E_pot, m = 0.3)
+```
+
+```{r flight}
+flight <- flight_arrow(velocity, angle_degrees = 45)
+```
+
+```{r plot_flight}
+plot_flight(flight)
+```

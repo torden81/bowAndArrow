@@ -35,6 +35,7 @@ velocity <- init_v(E_pot, m = arrow_weight)
 
 ```{r flight}
 flight <- flight_arrow(velocity, angle_degrees = angle)
+lapply(flight, head)
 ```
 
 ```{r plot_flight, fig.width=7, fig.height=5}

@@ -31,6 +31,10 @@ app_server <- function(input, output, session) {
   )
 
   output[["flight_path_plot"]] <- renderPlot(
-    plot_flight(flight())
+    plot_flight(flight(),
+                max_x = input[["maxX"]],
+                max_y = input[["maxY"]]
+    ),
+    bg = "transparent"
   )
 }

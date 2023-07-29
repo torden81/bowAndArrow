@@ -97,19 +97,25 @@ flight_arrow <- function(initial_velocity, angle_degrees){
 #' @export
 #'
 #' @examples
-plot_flight <- function(flight_data, ...){
+plot_flight <- function(flight_data, max_x = NA, max_y = NA, ...){
   #browser()
   x <- flight_data[["path"]][,"x"]
   y <- flight_data[["path"]][,"y"]
-  max_height <- flight_data[["max_height"]]
+  if ( is.na(max_y) ){
+    max_y <- flight_data[["max_height"]]
+  }
+  if ( is.na(max_x) ){
+    max_x <- max(x)
+  }
+
   # Plot the trajectory
   plot( y ~ x,
         type = "l",
         xlab = "Horizontal Distance (m)",
         ylab = "Vertical Height (m)",
         main = "Parabolic Flight Path of Arrow",
-        xlim = c(0, max(x)),
-        ylim = c(0, max_height),
+        xlim = c(0, max_x),
+        ylim = c(0, max_y),
         ...
   )
 }

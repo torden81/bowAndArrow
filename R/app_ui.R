@@ -33,8 +33,21 @@ app_ui <- function(request) {
                      max = 90)
       ),
       fluidRow(
-        shiny::plotOutput("flight_path_plot")
-
+        wellPanel(
+        shiny::plotOutput("flight_path_plot"),
+        sliderInput(
+          "maxX", "Distance",
+          min = 0, max = 100,
+          value = 30,
+          step = 1
+        ),
+        sliderInput(
+          "maxY", "Height",
+          min = 0, max = 20,
+          value = 10,
+          step = 1
+        )
+        )
       )
 
     )

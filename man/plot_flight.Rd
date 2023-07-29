@@ -4,7 +4,7 @@
 \alias{plot_flight}
 \title{Plot the flight of an arrow}
 \usage{
-plot_flight(flight_data, ...)
+plot_flight(flight_data, max_x = NA, max_y = NA, ...)
 }
 \arguments{
 \item{...}{}

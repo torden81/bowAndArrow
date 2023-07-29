@@ -25,7 +25,6 @@ devtools::check()
 ## sent to CRAN, or to a package manager
 devtools::document()
 devtools::build()
-devtools::install_local()
 devtools::install()
 
 ## RStudio ----
@@ -44,7 +43,8 @@ golem::add_shinyappsio_file()
 
 # Deploy to Posit Connect or ShinyApps.io
 # In command line.
-devtools::install_github(desc::desc_get_field("URL"))
+#devtools::install_github(desc::desc_get_field("URL"))
+options(rsconnect.packrat = TRUE) # renv in rsconnect cause error, revert to packrat: https://rstudio.github.io/rsconnect/news/index.html
 rsconnect::deployApp(
   appName = desc::desc_get_field("Package"),
   appTitle = desc::desc_get_field("Package"),

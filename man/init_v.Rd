@@ -7,7 +7,9 @@
 init_v(E_pot, m)
 }
 \arguments{
-\item{m}{}
+\item{E_pot}{potential energy}
+
+\item{m}{arrow weight in kg}
 }
 \description{
 Calculate the initial velocity of an arrow at string release

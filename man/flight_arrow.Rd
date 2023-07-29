@@ -7,7 +7,9 @@
 flight_arrow(initial_velocity, angle_degrees)
 }
 \arguments{
-\item{angle_degrees}{}
+\item{initial_velocity}{initial velocity in m/s}
+
+\item{angle_degrees}{the angle at release in degrees relative to the ground}
 }
 \description{
 The flight of the arrow is calculated with a given initial velocity of the arrow

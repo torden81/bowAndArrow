@@ -10,7 +10,33 @@ app_ui <- function(request) {
     golem_add_external_resources(),
     # Your application UI logic
     fluidPage(
-      h1("bowAndArrow")
+      fluidRow(
+        h1("Bow and Arrow")
+      ),
+      fluidRow(
+        numericInput("drawWeight",
+                     label = "Draw weight [pounds]",
+                     value = 30,
+                     min = 0),
+        numericInput("drawLength",
+                     label = "Draw length [inches]",
+                     value = 28,
+                     min = 0),
+        numericInput("arrowWeight",
+                     label = "Arrow weight [g]",
+                     value = 300,
+                     min = 0),
+        numericInput("angle",
+                     label = "Angle [deg]",
+                     value = 45,
+                     min = 0,
+                     max = 90)
+      ),
+      fluidRow(
+        shiny::plotOutput("flight_path_plot")
+
+      )
+
     )
   )
 }

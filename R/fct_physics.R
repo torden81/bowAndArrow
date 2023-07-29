@@ -24,8 +24,8 @@ energy_bow <- function(draw_weight_pounds, draw_length_inches){
 
 #' Calculate the initial velocity of an arrow at string release
 #'
-#' @param E_pot
-#' @param m
+#' @param E_pot potential energy
+#' @param m arrow weight in kg
 #'
 #' @return
 #' @export
@@ -45,8 +45,8 @@ init_v <- function(E_pot, m){
 #' The flight of the arrow is calculated with a given initial velocity of the arrow
 #' at string release and the release angle.
 #'
-#' @param initial_velocity
-#' @param angle_degrees
+#' @param initial_velocity initial velocity in m/s
+#' @param angle_degrees the angle at release in degrees relative to the ground
 #'
 #' @return
 #' @export
@@ -98,6 +98,7 @@ flight_arrow <- function(initial_velocity, angle_degrees){
 #'
 #' @examples
 plot_flight <- function(flight_data, ...){
+  #browser()
   x <- flight_data[["path"]][,"x"]
   y <- flight_data[["path"]][,"y"]
   max_height <- flight_data[["max_height"]]

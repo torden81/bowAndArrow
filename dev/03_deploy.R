@@ -23,7 +23,9 @@ devtools::check()
 ## Local, CRAN or Package Manager ----
 ## This will build a tar.gz that can be installed locally,
 ## sent to CRAN, or to a package manager
+devtools::document()
 devtools::build()
+devtools::install_local()
 devtools::install()
 
 ## RStudio ----
@@ -42,6 +44,7 @@ golem::add_shinyappsio_file()
 
 # Deploy to Posit Connect or ShinyApps.io
 # In command line.
+devtools::install_github(desc::desc_get_field("URL"))
 rsconnect::deployApp(
   appName = desc::desc_get_field("Package"),
   appTitle = desc::desc_get_field("Package"),
@@ -55,6 +58,6 @@ rsconnect::deployApp(
     "app.R"
   ),
   appId = rsconnect::deployments(".")$appId,
-  lint = FALSE,
+  lint = TRUE,
   forceUpdate = TRUE
 )

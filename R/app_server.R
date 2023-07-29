@@ -37,4 +37,16 @@ app_server <- function(input, output, session) {
     ),
     bg = "transparent"
   )
+
+  output[["version_txt"]] <- renderUI(
+    tagList(
+      HTML(
+        as.character(packageVersion("bowAndArrow"))
+      ),
+      shiny::tags$br(),
+      shiny::tags$a("source code on github", href= "https://github.com/torden81/bowAndArrow")
+    )
+
+    )
+
 }

@@ -48,7 +48,8 @@ app_ui <- function(request) {
           step = 1
         )
         )
-      )
+      ),
+      uiOutput("version_txt")
 
     )
   )

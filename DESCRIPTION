@@ -1,6 +1,6 @@
 Package: bowAndArrow
 Title: Bow and Arrow
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: 
     person("Torben", "Wittwer", , "torden81@protonmail.com", role = c("cre", "aut"))
 Description: A package to do calculations regarding archery

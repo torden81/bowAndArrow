@@ -1,6 +1,6 @@
 Package: bowAndArrow
 Title: Bow and Arrow
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: 
     person("Torben", "Wittwer", , "torden81@protonmail.com", role = c("cre", "aut"))
 Description: A package to do calculations regarding archery
@@ -10,7 +10,9 @@ BugReports: https://github.com/torden81/bowAndArrow/issues
 Imports: 
     config (>= 0.3.1),
     golem (>= 0.4.1),
-    shiny (>= 1.7.4.1)
+    magrittr,
+    shiny (>= 1.7.4.1),
+    shinydashboard
 Suggests: 
     knitr,
     rmarkdown,

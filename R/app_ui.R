@@ -9,48 +9,64 @@ app_ui <- function(request) {
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # Your application UI logic
-    fluidPage(
-      fluidRow(
-        h1("Bow and Arrow")
-      ),
-      fluidRow(
-        numericInput("drawWeight",
-                     label = "Draw weight [pounds]",
-                     value = 30,
-                     min = 0),
-        numericInput("drawLength",
-                     label = "Draw length [inches]",
-                     value = 28,
-                     min = 0),
-        numericInput("arrowWeight",
-                     label = "Arrow weight [g]",
-                     value = 300,
-                     min = 0),
-        numericInput("angle",
-                     label = "Angle [deg]",
-                     value = 45,
-                     min = 0,
-                     max = 90)
-      ),
-      fluidRow(
-        wellPanel(
-        shiny::plotOutput("flight_path_plot"),
-        sliderInput(
-          "maxX", "Distance",
-          min = 0, max = 100,
-          value = 30,
-          step = 1
-        ),
-        sliderInput(
-          "maxY", "Height",
-          min = 0, max = 20,
-          value = 10,
-          step = 1
-        )
-        )
-      ),
-      uiOutput("version_txt")
 
+    shinydashboard::dashboardPage(
+      skin = "green",
+      shinydashboard::dashboardHeader(title = "Bow and Arrow"),
+      shinydashboard::dashboardSidebar(collapsed = TRUE, disable = TRUE),
+      shinydashboard::dashboardBody(
+
+        fluidRow(
+          shinydashboard::box(
+            numericInput("drawWeight",
+                         label = "Draw weight [pounds]",
+                         value = 30,
+                         min = 0),
+            numericInput("drawLength",
+                         label = "Draw length [inches]",
+                         value = 28,
+                         min = 0),
+            numericInput("arrowWeight",
+                         label = "Arrow weight [g]",
+                         value = 15,
+                         min = 0),
+            numericInput("angle",
+                         label = "Angle [deg]",
+                         value = 2,
+                         min = 0,
+                         max = 90),
+            width = 6),
+          column(
+            uiOutput("flighttime"),
+            uiOutput("maxheight"),
+            uiOutput("flightdistance"),
+            uiOutput("speedrelease"),
+            width = 6
+          )
+        ),
+        fluidRow(
+          shinydashboard::box(
+            shiny::plotOutput("flight_path_plot"),
+            sliderInput(
+              "maxX", "Distance",
+              min = 0, max = 200,
+              value = 50,
+              step = 1
+            ),
+            sliderInput(
+              "maxY", "Height",
+              min = 0, max = 50,
+              value = 1,
+              step = 1
+            ),
+            width = 12
+          )
+        ),
+        uiOutput("version_txt")
+
+
+
+      )
     )
   )
 }
